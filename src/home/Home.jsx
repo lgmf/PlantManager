@@ -1,18 +1,19 @@
 import React from 'react';
+import { Dimensions } from 'react-native';
 import styled from 'styled-components/native';
 
 import { Subtitle, Title } from '../design-system/typography';
-import { Button, Container } from '../design-system/components';
+import { IconButton, Container } from '../design-system/components';
 
 import wateringImage from '../images/watering.png';
 
 const HomeTitle = styled(Title)`
-  width: 220px;
+  text-align: center;
+  width: 195px;
 `;
 
 const HomeImage = styled.Image`
-  width: 292px;
-  height: 284px;
+  height: ${Dimensions.get('window').width * 0.7}px;
 `;
 
 function Home() {
@@ -22,7 +23,7 @@ function Home() {
         Gerencie suas plantas de forma fácil
       </HomeTitle>
 
-      <HomeImage source={wateringImage} />
+      <HomeImage source={wateringImage} resizeMode="contain" />
 
       <Subtitle>
         Não esqueça mais de regar suas plantas.
@@ -30,9 +31,7 @@ function Home() {
         sempre que precisar.
       </Subtitle>
 
-      <Button>
-        &gt;
-      </Button>
+      <IconButton icon="chevron-right" />
     </Container>
   );
 }

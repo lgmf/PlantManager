@@ -12,9 +12,9 @@ const Icon = styled(Feather)`
   color: ${Colors.white}
 `;
 
-function IconButton({ icon }) {
+function IconButton({ icon, onPress }) {
   return (
-    <ButtonContainer>
+    <ButtonContainer onPress={onPress}>
       <Icon name={icon} />
     </ButtonContainer>
   );

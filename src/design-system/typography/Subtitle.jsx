@@ -1,23 +1,12 @@
-import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
 import { Colors } from '../palette';
 
-const styles = StyleSheet.create({
-  subtitle: {
-    fontSize: 18,
-    textAlign: 'center',
-    paddingHorizontal: 20,
-    color: Colors.heading,
-  },
-});
-
-function Subtitle({ children }) {
-  return (
-    <Text style={styles.subtitle}>
-      {children}
-    </Text>
-  );
-}
+const Subtitle = styled.Text`
+  font-size: 18px;
+  text-align: center;
+  padding: 0 20px;
+  color: ${Colors.heading};
+`;
 
 export default Subtitle;

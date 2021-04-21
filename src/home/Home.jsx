@@ -1,29 +1,28 @@
 import React from 'react';
-import { Image, StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
 import { Subtitle, Title } from '../design-system/typography';
 import { Button, Container } from '../design-system/components';
 
 import wateringImage from '../images/watering.png';
 
-const styles = StyleSheet.create({
-  title: {
-    width: 220,
-  },
-  image: {
-    width: 292,
-    height: 284,
-  },
-});
+const HomeTitle = styled(Title)`
+  width: 220px;
+`;
+
+const HomeImage = styled.Image`
+  width: 292px;
+  height: 284px;
+`;
 
 function Home() {
   return (
     <Container>
-      <Title customStyles={styles.title}>
+      <HomeTitle>
         Gerencie suas plantas de forma fácil
-      </Title>
+      </HomeTitle>
 
-      <Image source={wateringImage} style={styles.image} />
+      <HomeImage source={wateringImage} />
 
       <Subtitle>
         Não esqueça mais de regar suas plantas.

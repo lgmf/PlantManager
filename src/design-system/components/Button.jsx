@@ -1,30 +1,28 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, Text } from 'react-native';
+import styled from 'styled-components/native';
 
 import { Colors } from '../palette';
 
-const styles = StyleSheet.create({
-  button: {
-    backgroundColor: Colors.green,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 16,
-    height: 56,
-    width: 56,
-  },
-  text: {
-    color: Colors.white,
-    fontSize: 24,
-  },
-});
+export const ButtonContainer = styled.TouchableOpacity`
+  background-color: ${Colors.green};
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  padding: 12px 20px;
+`;
+
+const ButtonText = styled.Text`
+  color: ${Colors.white};
+  fontSize: 24px;
+`;
 
 function Button({ children }) {
   return (
-    <TouchableOpacity style={styles.button} activeOpacity={0.7}>
-      <Text style={styles.text}>
+    <ButtonContainer activeOpacity={0.7}>
+      <ButtonText>
         {children}
-      </Text>
-    </TouchableOpacity>
+      </ButtonText>
+    </ButtonContainer>
   );
 }
 

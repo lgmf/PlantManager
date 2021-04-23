@@ -4,11 +4,12 @@ import { Colors } from '../palette';
 
 import Fonts from './Fonts';
 
-const Subtitle = styled.Text`
+const Paragraph = styled.Text`
   font-family: ${Fonts.text};
-  font-size: 18px;
+  font-size: 17px;
+  line-height: 20px;
   color: ${Colors.heading};
-  text-align: ${({ centered }) => (centered ? 'center' : 'left')};
+  font-weight: ${(props) => (props.bold ? 'bold' : 'normal')};
 `;
 
-export default Subtitle;
+export default Paragraph;

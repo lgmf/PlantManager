@@ -11,7 +11,7 @@ const Title = styled.Text`
   line-height: 32px;
   font-weight: bold;
   color: ${Colors.heading};
-  text-align: center;
+  text-align: ${(props) => (props.centered ? 'center' : 'left')};
 `;
 
 export default Title;

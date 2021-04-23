@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
+import { useNavigation } from '@react-navigation/core';
+
 import { Title, Subtitle } from '../design-system/typography';
 import { Button, Container, Emoji } from '../design-system/components';
 
@@ -12,6 +14,8 @@ const Content = styled.View`
 `;
 
 function ConfirmationScreen() {
+  const navigation = useNavigation();
+
   return (
     <Container.Container>
       <Content>
@@ -28,7 +32,7 @@ function ConfirmationScreen() {
           plantinhas com muito cuidado.
         </Subtitle>
 
-        <Button onPress={() => console.log('começar')}>
+        <Button onPress={() => navigation.navigate('PlantSelect')}>
           Começar
         </Button>
 

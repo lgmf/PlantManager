@@ -6,7 +6,8 @@ import { Colors } from '../design-system/palette';
 import HomeScreen from '../home/Home';
 import UserIdentificationScreen from '../user-identification/UserIdentification';
 import ConfirmationScreen from '../confirmation/Confirmation';
-import PlantSelectScreen from '../plant-select/PlantSelect';
+import PlantSelectScreen from '../plants/select/PlantSelect';
+import PlantsSaveScreen from '../plants/save/PlantsSave';
 
 const StackNavigator = createStackNavigator();
 
@@ -23,6 +24,7 @@ function StackNavigation() {
       <StackNavigator.Screen name="UserIdentification" component={UserIdentificationScreen} />
       <StackNavigator.Screen name="Confirmation" component={ConfirmationScreen} />
       <StackNavigator.Screen name="PlantSelect" component={PlantSelectScreen} />
+      <StackNavigator.Screen name="PlantSave" component={PlantsSaveScreen} />
     </StackNavigator.Navigator>
   );
 }

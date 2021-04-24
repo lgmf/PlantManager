@@ -2,19 +2,21 @@ import React from 'react';
 import { Alert } from 'react-native';
 
 import { useNavigation } from '@react-navigation/core';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { Title } from '../design-system/typography';
 import { Container, Emoji } from '../design-system/components';
 
 import UserForm from './UserForm';
+import { useUserName, saveUserName } from './hooks';
 
 function UserIdentification() {
   const navigation = useNavigation();
 
+  const userName = useUserName();
+
   async function saveAndNavigate(form) {
     try {
-      AsyncStorage.setItem('@plantManager:userName', form.name);
+      await saveUserName(form.name);
       navigation.navigate('Confirmation');
     } catch (error) {
       Alert.alert(error.message);
@@ -33,7 +35,7 @@ function UserIdentification() {
         </Title>
 
         <UserForm
-          form={{ name: '' }}
+          form={{ name: userName }}
           onSubmit={(values) => saveAndNavigate(values)}
         />
 

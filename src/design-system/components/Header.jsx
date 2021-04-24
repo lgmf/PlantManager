@@ -1,21 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components/native';
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
 import { Title, Paragraph } from '../typography';
-
-function useUserName() {
-  const [userName, setUserName] = useState('');
-
-  useEffect(() => {
-    AsyncStorage
-      .getItem('@plantManager:userName')
-      .then((next) => setUserName(next));
-  });
-
-  return userName;
-}
 
 const HeaderContainer = styled.View`
   width: 100%;
@@ -35,9 +21,7 @@ const Avatar = styled.View`
   border-radius: 40px;
 `;
 
-function Header() {
-  const userName = useUserName();
-
+function Header({ userName }) {
   return (
     <HeaderContainer>
       <Greeting>

@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
 
-import { Container, Header, Loader } from '../design-system/components';
-import { Paragraph } from '../design-system/typography';
+import { useNavigation } from '@react-navigation/core';
+
+import { Container, Header, Loader } from '../../design-system/components';
+import { Paragraph } from '../../design-system/typography';
+
+import useUserName from '../../user-identification/hooks/UseUserName';
 
 import { usePlants, usePlantsEnvironments } from './hooks';
 
@@ -16,8 +20,11 @@ const Hero = styled.View`
 function PlantSelect() {
   const [selectedEnvironment, setSelectedEnvironment] = useState('');
 
-  const [plants, loadingPlants] = usePlants(selectedEnvironment);
+  const navigation = useNavigation();
 
+  const userName = useUserName();
+
+  const [plants, loadingPlants] = usePlants(selectedEnvironment);
   const [environments, loadingEnvironments] = usePlantsEnvironments();
 
   if (loadingEnvironments) {
@@ -26,7 +33,7 @@ function PlantSelect() {
 
   return (
     <Container.Container>
-      <Header />
+      <Header userName={userName} />
 
       <Hero>
         <Paragraph>Em qual ambiente</Paragraph>
@@ -42,6 +49,7 @@ function PlantSelect() {
       <PlantsGrid
         loading={loadingPlants}
         plants={plants}
+        onPlantSelected={(plant) => navigation.navigate('PlantSave', { plant })}
       />
     </Container.Container>
   );

@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components/native';
 
 import { Colors } from '../palette';
+import { Paragraph } from '../typography';
+
+const Label = styled(Paragraph)`
+  margin-bottom: 8px;
+`;
 
 const StyledTextInput = styled.TextInput`
   width: 100%;
@@ -19,18 +24,23 @@ const ErrorMessage = styled.Text`
 `;
 
 function TextInput({
+  label,
   value,
   placeholder,
   onChange,
   touched,
   error,
   name,
+  ...rest
 }) {
   const [focused, setFocused] = useState(false);
 
   return (
     <>
+      { label && <Label>{label}</Label>}
+
       <StyledTextInput
+        type="number"
         name={name}
         value={value}
         placeholder={placeholder}
@@ -38,6 +48,7 @@ function TextInput({
         onBlur={() => setFocused(false)}
         onFocus={() => setFocused(true)}
         onChangeText={onChange}
+        {...rest}
       />
 
       {

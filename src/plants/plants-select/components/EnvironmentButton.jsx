@@ -2,8 +2,8 @@ import React from 'react';
 import { RectButton } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
 
-import { Colors } from '../../design-system/palette';
-import { Fonts } from '../../design-system/typography';
+import { Colors } from '../../../design-system/palette';
+import { Fonts } from '../../../design-system/typography';
 
 const ButtonContainer = styled(RectButton)`
   background-color: ${(props) => (props.active ? Colors.green_light : Colors.shape)}

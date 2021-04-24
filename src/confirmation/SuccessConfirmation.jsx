@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import { useNavigation } from '@react-navigation/core';
+import { useNavigation, useRoute } from '@react-navigation/core';
 
 import { Title, Subtitle } from '../design-system/typography';
 import { Button, Container, Emoji } from '../design-system/components';
@@ -14,26 +14,28 @@ const Content = styled.View`
 `;
 
 function ConfirmationScreen() {
+  const route = useRoute();
   const navigation = useNavigation();
+
+  const {
+    emoji,
+    title,
+    subtitle,
+    ctaText,
+    nextScreen,
+  } = route.params;
 
   return (
     <Container.Container>
       <Content>
-        <Emoji>
-          😄
-        </Emoji>
+        <Emoji>{emoji}</Emoji>
 
-        <Title>
-          Prontinho
-        </Title>
+        <Title>{title}</Title>
 
-        <Subtitle>
-          Agora vamos começar a cuidar das suas
-          plantinhas com muito cuidado.
-        </Subtitle>
+        <Subtitle>{subtitle}</Subtitle>
 
-        <Button onPress={() => navigation.navigate('PlantSelect')}>
-          Começar
+        <Button onPress={() => navigation.navigate(nextScreen)}>
+          {ctaText}
         </Button>
 
       </Content>

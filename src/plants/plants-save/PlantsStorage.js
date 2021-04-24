@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SAVED_PLANTS_STORAGE_KEY = '@plantManger.savedPlants';
 
-export default {
+const PlantsStorage = {
   async load() {
     try {
       const jsonStr = await AsyncStorage.getItem(SAVED_PLANTS_STORAGE_KEY);
@@ -30,3 +31,24 @@ export default {
     return allPlants;
   },
 };
+
+export function useSavedPlants() {
+  const [savedPlants, setSavedPlants] = useState([]);
+
+  useEffect(() => {
+    PlantsStorage
+      .load()
+      .then((loadedPlants) => {
+        const plants = Object
+          .values(loadedPlants)
+          .filter(Boolean)
+          .map((it) => it.data);
+
+        setSavedPlants(plants);
+      });
+  }, []);
+
+  return savedPlants;
+}
+
+export default PlantsStorage;

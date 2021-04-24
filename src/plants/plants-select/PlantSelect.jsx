@@ -10,8 +10,7 @@ import useUserName from '../../user-identification/hooks/UseUserName';
 
 import { usePlants, usePlantsEnvironments } from './hooks';
 
-import EnvironmentList from './EnvironmentList';
-import PlantsGrid from './PlantsGrid';
+import { PlantsGrid, EnvironmentList } from './components';
 
 const Hero = styled.View`
   margin-bottom: 32px;

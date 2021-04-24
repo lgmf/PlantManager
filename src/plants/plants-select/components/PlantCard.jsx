@@ -3,8 +3,8 @@ import { RectButton } from 'react-native-gesture-handler';
 import { SvgFromUri } from 'react-native-svg';
 import styled from 'styled-components/native';
 
-import { Colors } from '../../design-system/palette';
-import { Fonts } from '../../design-system/typography';
+import { Colors } from '../../../design-system/palette';
+import { Fonts } from '../../../design-system/typography';
 
 const ButtonContainer = styled(RectButton)`
   max-width: 45%;

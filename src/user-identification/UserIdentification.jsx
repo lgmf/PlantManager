@@ -17,7 +17,14 @@ function UserIdentification() {
   async function saveAndNavigate(form) {
     try {
       await saveUserName(form.name);
-      navigation.navigate('Confirmation');
+
+      navigation.navigate('SuccessConfirmation', {
+        emoji: '😄',
+        title: 'Prontinho',
+        subtitle: 'Agora vamos começar a cuidar das suas plantinhas com muito cuidado.',
+        ctaText: 'Começar',
+        nextScreen: 'PlantSelect',
+      });
     } catch (error) {
       Alert.alert(error.message);
     }

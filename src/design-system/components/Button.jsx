@@ -18,9 +18,13 @@ const ButtonText = styled.Text`
   color: ${Colors.white};
 `;
 
-function Button({ children, onPress }) {
+function Button({ disabled, onPress, children }) {
   return (
-    <ButtonContainer activeOpacity={0.7} onPress={onPress}>
+    <ButtonContainer
+      disabled={disabled}
+      activeOpacity={0.7}
+      onPress={onPress}
+    >
       <ButtonText>
         {children}
       </ButtonText>

@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Alert } from 'react-native';
 
 import { useNavigation } from '@react-navigation/core';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { Title } from '../design-system/typography';
-import {
-  Button,
-  Container,
-  Emoji,
-  Form,
-  TextInput,
-} from '../design-system/components';
+import { Container, Emoji } from '../design-system/components';
+
+import UserForm from './UserForm';
 
 function UserIdentification() {
-  const [name, setName] = useState('');
-
   const navigation = useNavigation();
 
-  function handleSubmit() {
-    navigation.navigate('Confirmation');
+  async function saveAndNavigate(form) {
+    try {
+      AsyncStorage.setItem('@plantManager:userName', form.name);
+      navigation.navigate('Confirmation');
+    } catch (error) {
+      Alert.alert(error.message);
+    }
   }
 
   return (
@@ -31,21 +32,11 @@ function UserIdentification() {
           Como podemos chamar você?
         </Title>
 
-        <Form.Form>
-          <Form.Controls>
-            <TextInput
-              value={name}
-              placeholder="Digite um nome"
-              onChange={(value) => setName(value)}
-            />
-          </Form.Controls>
+        <UserForm
+          form={{ name: '' }}
+          onSubmit={(values) => saveAndNavigate(values)}
+        />
 
-          <Form.Actions>
-            <Button onPress={handleSubmit}>
-              Confirmar
-            </Button>
-          </Form.Actions>
-        </Form.Form>
       </Container.Content>
     </Container.Container>
   );

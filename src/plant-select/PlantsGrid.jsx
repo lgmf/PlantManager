@@ -16,6 +16,7 @@ function PlantsGrid({ plants }) {
     <PlantsGridContainer>
       <FlatList
         data={plants}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => <PlantCard data={item} />}
         showsVerticalScrollIndicator={false}
         numColumns={2}

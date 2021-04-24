@@ -13,8 +13,8 @@ function EnvironmentList({ environments, active, onChange }) {
   return (
     <EnvironmentContainer>
       <FlatList
-        data={environments}
         horizontal
+        data={environments}
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.key}
         renderItem={({ item }) => (

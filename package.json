@@ -6,8 +6,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "lint": "eslint . --fix",
-    "server": "json-server --host 192.168.15.12 --delay 1200 --watch ./server/db.json"
+    "lint": "eslint . --fix"
   },
   "dependencies": {
     "@expo-google-fonts/jost": "^0.1.0",
@@ -21,6 +20,7 @@
     "@react-navigation/stack": "^5.14.4",
     "axios": "^0.21.1",
     "dayjs": "^1.10.4",
+    "dotenv": "^8.2.0",
     "expo": "~41.0.0",
     "expo-app-loading": "^1.0.3",
     "expo-font": "^9.1.0",
@@ -43,14 +43,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "babel-plugin-module-resolver": "^3.2.0",
     "eslint": "^7.24.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-react-native": "^3.10.0",
-    "json-server": "^0.16.3"
+    "eslint-plugin-react-native": "^3.10.0"
   },
   "private": true
 }

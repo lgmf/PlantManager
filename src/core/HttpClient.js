@@ -12,6 +12,6 @@ class HttpClient {
 
 export default new HttpClient(
   axios.create({
-    baseURL: 'http://192.168.15.12:3000',
+    baseURL: 'https://lgmf-plant-manager-server.herokuapp.com',
   }),
 );

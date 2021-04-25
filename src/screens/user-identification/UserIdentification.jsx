@@ -7,8 +7,9 @@ import { useNavigation } from '@react-navigation/core';
 import { Title } from '@design-system/typography';
 import { Container, Emoji } from '@design-system/components';
 
+import { useUserActions } from '@store/user';
+
 import UserForm from './UserForm';
-import { saveUserName } from './hooks';
 
 const UserIdentificationContent = styled(Container.Content)`
   justify-content: center;
@@ -22,9 +23,11 @@ const Hero = styled.View`
 function UserIdentification() {
   const navigation = useNavigation();
 
-  async function saveAndNavigate(form) {
+  const { saveUserName } = useUserActions();
+
+  function saveAndNavigate(form) {
     try {
-      await saveUserName(form.name);
+      saveUserName(form.name);
 
       navigation.navigate('SuccessConfirmation', {
         emoji: '😄',

@@ -30,7 +30,7 @@ function ConfirmationScreen() {
       <Content>
         <Emoji>{emoji}</Emoji>
 
-        <Title>{title}</Title>
+        <Title centered>{title}</Title>
 
         <Subtitle>{subtitle}</Subtitle>
 

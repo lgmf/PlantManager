@@ -8,6 +8,7 @@ const ModuleResolverPlugin = [
       '@design-system': './src/design-system',
       '@images': './src/images',
       '@screens': './src/screens',
+      '@store': './src/store',
       '@utils': './src/utils',
     },
   },

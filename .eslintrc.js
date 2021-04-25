@@ -27,6 +27,8 @@ module.exports = {
     'module-resolver',
   ],
   rules: {
+    camelcase: 0,
+    'no-extra-boolean-cast': 0,
     'react/prop-types': 0,
     'react/jsx-props-no-spreading': 0,
     'import/prefer-default-export': ['off'],
@@ -34,6 +36,5 @@ module.exports = {
       ignoreDepth: 2,
       allowDepthMoreOrLessThanEquality: true,
     }],
-    camelcase: ['off'],
   },
 };

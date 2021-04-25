@@ -6,7 +6,7 @@ import UserIdentificationScreen from '@screens/user-identification/UserIdentific
 import SuccessConfirmationScreen from '@screens/confirmation/SuccessConfirmation';
 import PlantsSaveScreen from '@screens/plants/plants-save/PlantsSave';
 
-import { useUserName } from '@screens/user-identification/hooks';
+import { useUserName } from '@store/user';
 
 import TabsNavigation from './TabsNavigation';
 
@@ -31,8 +31,6 @@ function StackNavigation() {
       />
 
       {
-
-        // eslint-disable-next-line no-extra-boolean-cast
         Boolean(userName) ? (
           <>
             <StackNavigator.Screen

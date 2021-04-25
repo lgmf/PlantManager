@@ -1,12 +1,12 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import HomeScreen from '../home/Home';
-import UserIdentificationScreen from '../user-identification/UserIdentification';
-import SuccessConfirmationScreen from '../confirmation/SuccessConfirmation';
-import PlantsSaveScreen from '../plants/plants-save/PlantsSave';
+import HomeScreen from '@screens/home/Home';
+import UserIdentificationScreen from '@screens/user-identification/UserIdentification';
+import SuccessConfirmationScreen from '@screens/confirmation/SuccessConfirmation';
+import PlantsSaveScreen from '@screens/plants/plants-save/PlantsSave';
 
-import { useUserName } from '../user-identification/hooks';
+import { useUserName } from '@screens/user-identification/hooks';
 
 import TabsNavigation from './TabsNavigation';
 

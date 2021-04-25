@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 import Avatar from '@images/avatar.svg';
 
 import { Title, Paragraph } from '@design-system/typography';
-import { useUserName } from '../../user-identification/hooks';
+import { useUserName } from '@screens/user-identification/hooks';
 
 const HeaderContainer = styled.View`
   width: 100%;

@@ -7,6 +7,7 @@ const ModuleResolverPlugin = [
       '@core': './src/core',
       '@design-system': './src/design-system',
       '@images': './src/images',
+      '@screens': './src/screens',
       '@utils': './src/utils',
     },
   },

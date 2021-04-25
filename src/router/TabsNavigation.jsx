@@ -2,10 +2,11 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { MaterialIcons } from '@expo/vector-icons';
+
 import { Colors } from '@design-system/palette';
 
-import PlantSelectScreen from '../plants/plants-select/PlantSelect';
-import MyPlantsScreen from '../plants/my-plants/MyPlants';
+import PlantSelectScreen from '@screens/plants/plants-select/PlantSelect';
+import MyPlantsScreen from '@screens/plants/my-plants/MyPlants';
 
 const TabNavigator = createBottomTabNavigator();
 

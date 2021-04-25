@@ -11,6 +11,9 @@
       "@images/*": [
         "src/images/*"
       ],
+      "@screens/*": [
+        "src/screens/*"
+      ],
       "@utils/*": [
         "src/utils/*"
       ],

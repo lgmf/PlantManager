@@ -10,7 +10,6 @@ import MyPlantCard from './MyPlantCard';
 const MyPlantsListContainer = styled.View`
   flex: 1;
   width: 100%;
-  margin-top: 20px;
 `;
 
 const MyPlantsListTitle = styled(Paragraph)`
@@ -18,7 +17,7 @@ const MyPlantsListTitle = styled(Paragraph)`
   margin-bottom: 20px;
 `;
 
-function MyPlantsList({ plants }) {
+function MyPlantsList({ plants, onRemove }) {
   return (
     <MyPlantsListContainer>
       <MyPlantsListTitle bold>
@@ -28,7 +27,12 @@ function MyPlantsList({ plants }) {
       <FlatList
         data={plants}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <MyPlantCard plant={item} />}
+        renderItem={({ item }) => (
+          <MyPlantCard
+            plant={item}
+            onRemove={() => onRemove(item)}
+          />
+        )}
         showsVerticalScrollIndicator={false}
       />
     </MyPlantsListContainer>

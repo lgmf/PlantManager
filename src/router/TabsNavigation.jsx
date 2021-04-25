@@ -13,6 +13,7 @@ function TabsNavigation() {
   return (
     <TabNavigator.Navigator
       initialRouteName="PlantSelect"
+      lazy={false}
       tabBarOptions={{
         activeTintColor: Colors.green,
         inactiveTintColor: Colors.heading,

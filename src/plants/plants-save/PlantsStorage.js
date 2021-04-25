@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { DateUtils } from '../../utils';
@@ -12,6 +11,16 @@ function createNotificationDate(notificationTime) {
     .minute(minute)
     .second(0)
     .utc(true);
+}
+
+function toPlant(savedPlant) {
+  return savedPlant.data;
+}
+
+function byNotificationDate(a, b) {
+  const aNotificationDate = DateUtils(a.notificationDate);
+  const bNotificationDate = DateUtils(b.notificationDate);
+  return aNotificationDate.isAfter(bNotificationDate) ? 1 : -1;
 }
 
 const PlantsStorage = {
@@ -44,40 +53,22 @@ const PlantsStorage = {
 
     return allPlants;
   },
+  async list() {
+    const savedPlants = await PlantsStorage.load();
+    const plants = Object
+      .values(savedPlants)
+      .filter(Boolean)
+      .map(toPlant)
+      .sort(byNotificationDate);
+
+    return plants;
+  },
+  async remove(id) {
+    const savedPlants = await PlantsStorage.load();
+    delete savedPlants[id];
+    await AsyncStorage.setItem(SAVED_PLANTS_STORAGE_KEY, JSON.stringify(savedPlants));
+    return this.list();
+  },
 };
-
-function toPlant(savedPlant) {
-  return savedPlant.data;
-}
-
-function byNotificationDate(a, b) {
-  const aNotificationDate = DateUtils(a.notificationDate);
-  const bNotificationDate = DateUtils(b.notificationDate);
-  return aNotificationDate.isAfter(bNotificationDate) ? 1 : -1;
-}
-
-export function useSavedPlants() {
-  const [loading, setLoading] = useState(false);
-  const [savedPlants, setSavedPlants] = useState([]);
-
-  useEffect(() => {
-    setLoading(true);
-
-    PlantsStorage
-      .load()
-      .then((loadedPlants) => {
-        const plants = Object
-          .values(loadedPlants)
-          .filter(Boolean)
-          .map(toPlant)
-          .sort(byNotificationDate);
-
-        setSavedPlants(plants);
-      })
-      .finally(() => setLoading(false));
-  }, []);
-
-  return [savedPlants, loading];
-}
 
 export default PlantsStorage;

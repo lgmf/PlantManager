@@ -10,6 +10,11 @@ const EnvironmentContainer = styled.View`
 `;
 
 function EnvironmentList({ environments, active, onChange }) {
+  function changeActive(environmentKey) {
+    const nextActive = environmentKey === active ? '' : environmentKey;
+    onChange(nextActive);
+  }
+
   return (
     <EnvironmentContainer>
       <FlatList
@@ -20,7 +25,7 @@ function EnvironmentList({ environments, active, onChange }) {
         renderItem={({ item }) => (
           <EnvironmentButton
             active={item.key === active}
-            onPress={() => onChange(item.key)}
+            onPress={() => changeActive(item.key)}
           >
             {item.title}
           </EnvironmentButton>

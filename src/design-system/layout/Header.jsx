@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
+import { useUserName } from '../../user-identification/hooks';
+
 import { Title, Paragraph } from '../typography';
 
 const HeaderContainer = styled.View`
@@ -15,13 +17,15 @@ const Greeting = styled.View`
 `;
 
 const Avatar = styled.View`
-  background-color: gray;
+  background-color: #ccc;
   height: 80px;
   width: 80px;
   border-radius: 40px;
 `;
 
-function Header({ userName }) {
+function Header() {
+  const userName = useUserName();
+
   return (
     <HeaderContainer>
       <Greeting>

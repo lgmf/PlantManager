@@ -13,7 +13,7 @@ const PlantsStorage = {
     }
   },
   async save(next) {
-    const savedPlants = this.load();
+    const savedPlants = await this.load();
 
     if (savedPlants[next.id]) {
       return savedPlants;
@@ -46,7 +46,7 @@ export function useSavedPlants() {
 
         setSavedPlants(plants);
       });
-  }, []);
+  });
 
   return savedPlants;
 }

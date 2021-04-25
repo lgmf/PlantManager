@@ -21,12 +21,11 @@ const WaterDropImage = styled.Image`
 const PlantTipText = styled(Paragraph)`
   flex: 1;
   color: ${Colors.blue};
-  text-align: justify;
 `;
 
-function PlantTip({ tipText }) {
+function PlantTip({ tipText, style }) {
   return (
-    <PlantTipContainer>
+    <PlantTipContainer style={style}>
       <WaterDropImage source={waterDrop} />
       <PlantTipText>{tipText}</PlantTipText>
     </PlantTipContainer>

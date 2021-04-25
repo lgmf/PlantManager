@@ -10,9 +10,13 @@ import { PlantInfo, PlantsNotificationForm, PlantTip } from './components';
 
 import PlantsStorage from './PlantsStorage';
 
+const PlantsSaveContainer = styled.KeyboardAvoidingView`
+  flex: 1;
+`;
+
 const PlantsSaveTip = styled(PlantTip)`
   position: relative;
-  bottom: 80px;
+  bottom: 60px;
 `;
 
 function PlantSave() {
@@ -34,16 +38,18 @@ function PlantSave() {
 
   return (
     <ScrollView>
-      <PlantInfo plant={plant} />
+      <PlantsSaveContainer>
+        <PlantInfo plant={plant} />
 
-      <Container.Container>
-        <PlantsSaveTip tipText={plant.water_tips} />
+        <Container.Container>
+          <PlantsSaveTip tipText={plant.water_tips} />
 
-        <PlantsNotificationForm
-          form={{ notificationTime: '' }}
-          onSubmit={(values) => savePlant(values.notificationTime)}
-        />
-      </Container.Container>
+          <PlantsNotificationForm
+            form={{ notificationTime: '' }}
+            onSubmit={(values) => savePlant(values.notificationTime)}
+          />
+        </Container.Container>
+      </PlantsSaveContainer>
     </ScrollView>
   );
 }

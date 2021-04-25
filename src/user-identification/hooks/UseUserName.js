@@ -14,7 +14,7 @@ function useUserName() {
     AsyncStorage
       .getItem(USER_NAME_STORAGE_KEY)
       .then((next) => setUserName(next));
-  });
+  }, []);
 
   return userName;
 }

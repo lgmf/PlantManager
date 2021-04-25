@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { Container, Header } from '../../design-system/components';
-
-import { useUserName } from '../../user-identification/hooks';
+import { Header } from '../../design-system/layout';
+import { Container } from '../../design-system/components';
 
 import { PlantTip } from '../plants-save/components';
 import { useSavedPlants } from '../plants-save/PlantsStorage';
@@ -12,7 +11,6 @@ import { MyPlantsList } from './components';
 function MyPlants() {
   const [nextWateredMessage, setNextWateredMessage] = useState('');
 
-  const userName = useUserName();
   const savedPlants = useSavedPlants();
 
   useEffect(() => {
@@ -26,9 +24,9 @@ function MyPlants() {
 
   return (
     <Container.Container>
-      <Header userName={userName} />
+      <Header />
 
-      { nextWateredMessage && <PlantTip tipText={nextWateredMessage} />}
+      { Boolean(nextWateredMessage) && <PlantTip tipText={nextWateredMessage} />}
 
       <MyPlantsList plants={savedPlants} />
     </Container.Container>

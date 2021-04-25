@@ -3,10 +3,9 @@ import styled from 'styled-components/native';
 
 import { useNavigation } from '@react-navigation/core';
 
-import { Container, Header, Loader } from '../../design-system/components';
+import { Header } from '../../design-system/layout';
+import { Container, Loader } from '../../design-system/components';
 import { Paragraph } from '../../design-system/typography';
-
-import useUserName from '../../user-identification/hooks/UseUserName';
 
 import { usePlants, usePlantsEnvironments } from './hooks';
 
@@ -21,8 +20,6 @@ function PlantSelect() {
 
   const navigation = useNavigation();
 
-  const userName = useUserName();
-
   const [plants, loadingPlants] = usePlants(selectedEnvironment);
   const [environments, loadingEnvironments] = usePlantsEnvironments();
 
@@ -32,7 +29,7 @@ function PlantSelect() {
 
   return (
     <Container.Container>
-      <Header userName={userName} />
+      <Header />
 
       <Hero>
         <Paragraph>Em qual ambiente</Paragraph>
@@ -48,7 +45,7 @@ function PlantSelect() {
       <PlantsGrid
         loading={loadingPlants}
         plants={plants}
-        onPlantSelected={(plant) => navigation.navigate('PlantSave', { plant })}
+        onPlantSelected={(plant) => navigation.navigate('PlantsSave', { plant })}
       />
     </Container.Container>
   );

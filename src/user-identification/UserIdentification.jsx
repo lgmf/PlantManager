@@ -23,7 +23,7 @@ function UserIdentification() {
         title: 'Prontinho',
         subtitle: 'Agora vamos começar a cuidar das suas plantinhas com muito cuidado.',
         ctaText: 'Começar',
-        nextScreen: 'PlantSelect',
+        nextScreen: 'Plants',
       });
     } catch (error) {
       Alert.alert(error.message);

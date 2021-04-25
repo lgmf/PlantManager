@@ -8,7 +8,7 @@ import { Title } from '../design-system/typography';
 import { Container, Emoji } from '../design-system/components';
 
 import UserForm from './UserForm';
-import { useUserName, saveUserName } from './hooks';
+import { saveUserName } from './hooks';
 
 const UserIdentificationContent = styled(Container.Content)`
   justify-content: center;
@@ -21,8 +21,6 @@ const Hero = styled.View`
 
 function UserIdentification() {
   const navigation = useNavigation();
-
-  const userName = useUserName();
 
   async function saveAndNavigate(form) {
     try {
@@ -49,7 +47,7 @@ function UserIdentification() {
         </Hero>
 
         <UserForm
-          form={{ name: userName }}
+          form={{ name: '' }}
           onSubmit={(values) => saveAndNavigate(values)}
         />
       </UserIdentificationContent>

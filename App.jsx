@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import * as Notifications from 'expo-notifications';
 import AppLoading from 'expo-app-loading';
 
 import {
@@ -16,6 +17,18 @@ export default function App() {
     Jost_400Regular,
     Jost_600SemiBold,
   });
+
+  useEffect(() => {
+    const subscription = Notifications.addNotificationReceivedListener(
+      async (notification) => {
+        const { plant } = notification.request.content.data;
+        // eslint-disable-next-line no-console
+        console.log('notification received ====>', plant.name);
+      },
+    );
+
+    return () => subscription.remove();
+  }, []);
 
   if (fontsLoaded) {
     return <Router />;

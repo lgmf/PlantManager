@@ -6,12 +6,12 @@ import { Container } from '../../design-system/components';
 import { PlantTip } from '../plants-save/components';
 import { useSavedPlants } from '../plants-save/PlantsStorage';
 
-import { MyPlantsList } from './components';
+import { EmptyState, MyPlantsList } from './components';
 
 function MyPlants() {
   const [nextWateredMessage, setNextWateredMessage] = useState('');
 
-  const savedPlants = useSavedPlants();
+  const [savedPlants, loading] = useSavedPlants();
 
   useEffect(() => {
     const firstPlant = savedPlants[0];
@@ -26,9 +26,21 @@ function MyPlants() {
     <Container.Container>
       <Header />
 
-      { Boolean(nextWateredMessage) && <PlantTip tipText={nextWateredMessage} />}
+      {
+        !savedPlants.length
+          ? <EmptyState />
+          : (
+            <>
+              <PlantTip tipText={nextWateredMessage} />
 
-      <MyPlantsList plants={savedPlants} />
+              <MyPlantsList
+                loading={loading}
+                plants={savedPlants}
+              />
+            </>
+          )
+      }
+
     </Container.Container>
   );
 }

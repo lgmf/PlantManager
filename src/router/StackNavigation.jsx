@@ -20,16 +20,21 @@ function StackNavigation() {
       headerMode="none"
       initialRouteName="Home"
     >
+      <StackNavigator.Screen
+        name="Plants"
+        component={TabsNavigation}
+      />
+
+      <StackNavigator.Screen
+        name="SuccessConfirmation"
+        component={SuccessConfirmationScreen}
+      />
+
       {
 
         // eslint-disable-next-line no-extra-boolean-cast
         Boolean(userName) ? (
           <>
-            <StackNavigator.Screen
-              name="Plants"
-              component={TabsNavigation}
-            />
-
             <StackNavigator.Screen
               name="PlantsSave"
               component={PlantsSaveScreen}
@@ -49,11 +54,6 @@ function StackNavigation() {
           </>
         )
       }
-
-      <StackNavigator.Screen
-        name="SuccessConfirmation"
-        component={SuccessConfirmationScreen}
-      />
     </StackNavigator.Navigator>
   );
 }

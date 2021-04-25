@@ -22,22 +22,24 @@ function Home() {
 
   return (
     <Container.Container>
-      <Title>
-        Gerencie suas plantas de forma fácil
-      </Title>
+      <Container.Content>
+        <Title centered>
+          Gerencie suas plantas de forma fácil
+        </Title>
 
-      <HomeImage source={wateringImage} resizeMode="contain" />
+        <HomeImage source={wateringImage} resizeMode="contain" />
 
-      <Subtitle>
-        Não esqueça mais de regar suas plantas.
-        Nós cuidamos de lembrar você
-        sempre que precisar.
-      </Subtitle>
+        <Subtitle>
+          Não esqueça mais de regar suas plantas.
+          Nós cuidamos de lembrar você
+          sempre que precisar.
+        </Subtitle>
 
-      <IconButton
-        icon="chevron-right"
-        onPress={handleStart}
-      />
+        <IconButton
+          icon="chevron-right"
+          onPress={handleStart}
+        />
+      </Container.Content>
     </Container.Container>
   );
 }

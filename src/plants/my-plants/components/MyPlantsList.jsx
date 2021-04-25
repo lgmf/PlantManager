@@ -3,6 +3,7 @@ import { FlatList } from 'react-native';
 import styled from 'styled-components/native';
 
 import { Paragraph } from '../../../design-system/typography';
+import { withLoading } from '../../../design-system/components/hoc';
 
 import MyPlantCard from './MyPlantCard';
 
@@ -34,4 +35,4 @@ function MyPlantsList({ plants }) {
   );
 }
 
-export default MyPlantsList;
+export default withLoading(MyPlantsList);

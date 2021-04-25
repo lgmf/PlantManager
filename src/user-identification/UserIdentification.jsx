@@ -1,5 +1,6 @@
 import React from 'react';
 import { Alert } from 'react-native';
+import styled from 'styled-components/native';
 
 import { useNavigation } from '@react-navigation/core';
 
@@ -8,6 +9,15 @@ import { Container, Emoji } from '../design-system/components';
 
 import UserForm from './UserForm';
 import { useUserName, saveUserName } from './hooks';
+
+const UserIdentificationContent = styled(Container.Content)`
+  justify-content: center;
+`;
+
+const Hero = styled.View`
+  align-items: center;
+  margin-bottom: 20px;
+`;
 
 function UserIdentification() {
   const navigation = useNavigation();
@@ -32,21 +42,17 @@ function UserIdentification() {
 
   return (
     <Container.Container>
-      <Container.Content>
-        <Emoji>
-          😄
-        </Emoji>
-
-        <Title>
-          Como podemos chamar você?
-        </Title>
+      <UserIdentificationContent>
+        <Hero>
+          <Emoji>😄</Emoji>
+          <Title>Como podemos chamar você?</Title>
+        </Hero>
 
         <UserForm
           form={{ name: userName }}
           onSubmit={(values) => saveAndNavigate(values)}
         />
-
-      </Container.Content>
+      </UserIdentificationContent>
     </Container.Container>
   );
 }

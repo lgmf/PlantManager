@@ -9,7 +9,7 @@ import { PlantIcon } from '../../plants-select/components';
 const MyPlantsCardContainer = styled.View`
   flex-direction: row;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 10px;
   background-color: ${Colors.shape}
   border-radius: 20px;
@@ -18,6 +18,7 @@ const MyPlantsCardContainer = styled.View`
 const MyPlantCardTitle = styled(Paragraph)`
   flex: 1;
   margin: 0 8px;
+  font-size: 14px;
 `;
 
 const TimeMessage = styled(Paragraph)`

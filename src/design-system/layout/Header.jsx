@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
+import Avatar from '../../images/avatar.svg';
+
 import { useUserName } from '../../user-identification/hooks';
 
 import { Title, Paragraph } from '../typography';
@@ -16,13 +18,6 @@ const Greeting = styled.View`
   align-items: flex-start;
 `;
 
-const Avatar = styled.View`
-  background-color: #ccc;
-  height: 80px;
-  width: 80px;
-  border-radius: 40px;
-`;
-
 function Header() {
   const userName = useUserName();
 
@@ -32,7 +27,7 @@ function Header() {
         <Paragraph>Olá,</Paragraph>
         <Title>{userName}</Title>
       </Greeting>
-      <Avatar />
+      <Avatar width={60} height={60} />
     </HeaderContainer>
   );
 }

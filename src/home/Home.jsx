@@ -4,10 +4,10 @@ import styled from 'styled-components/native';
 
 import { useNavigation } from '@react-navigation/core';
 
-import { Subtitle, Title } from '../design-system/typography';
-import { IconButton, Container } from '../design-system/components';
+import { Subtitle, Title } from '@design-system/typography';
+import { IconButton, Container } from '@design-system/components';
 
-import wateringImage from '../images/watering.png';
+import wateringImage from '@images/watering.png';
 
 const HomeImage = styled.Image`
   height: ${Dimensions.get('window').width * 0.7}px;

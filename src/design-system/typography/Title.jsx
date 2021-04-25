@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import { Colors } from '../palette';
+import { Colors } from '@design-system/palette';
 
 import Fonts from './Fonts';
 

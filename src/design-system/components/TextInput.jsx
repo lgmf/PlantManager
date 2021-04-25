@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
 
-import { Colors } from '../palette';
-import { Paragraph } from '../typography';
+import { Colors } from '@design-system/palette';
+import { Paragraph } from '@design-system/typography';
 
 const Label = styled(Paragraph)`
   margin-bottom: 8px;

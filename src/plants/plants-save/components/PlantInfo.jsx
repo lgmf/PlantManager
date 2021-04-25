@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import { Colors } from '../../../design-system/palette';
-import { Title, Paragraph } from '../../../design-system/typography';
+import { Colors } from '@design-system/palette';
+import { Title, Paragraph } from '@design-system/typography';
 
 import { PlantIcon } from '../../plants-select/components';
 

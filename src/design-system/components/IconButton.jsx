@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 import { Feather } from '@expo/vector-icons';
 
-import { Colors } from '../palette';
+import { Colors } from '@design-system/palette';
 
 import { ButtonContainer } from './Button';
 

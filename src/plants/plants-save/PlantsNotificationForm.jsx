@@ -3,7 +3,7 @@ import * as yup from 'yup';
 
 import { Formik } from 'formik';
 
-import { Button, Form, TextInput } from '../../design-system/components';
+import { Button, Form, TextInput } from '@design-system/components';
 
 const timePattern = /[\d]{2}:[\d]{2}/;
 

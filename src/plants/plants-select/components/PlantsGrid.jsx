@@ -2,7 +2,7 @@ import React from 'react';
 import { FlatList } from 'react-native';
 import styled from 'styled-components/native';
 
-import { withLoading } from '../../../design-system/components/hoc';
+import { withLoading } from '@design-system/components/hoc';
 
 import PlantCard from './PlantCard';
 

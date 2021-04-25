@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { PlantsService } from '../../../core/services';
+import { PlantsService } from '@core/services';
 
 function usePlantsEnvironments() {
   const [loading, setLoading] = useState(false);

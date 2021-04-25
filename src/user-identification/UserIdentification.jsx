@@ -4,8 +4,8 @@ import styled from 'styled-components/native';
 
 import { useNavigation } from '@react-navigation/core';
 
-import { Title } from '../design-system/typography';
-import { Container, Emoji } from '../design-system/components';
+import { Title } from '@design-system/typography';
+import { Container, Emoji } from '@design-system/components';
 
 import UserForm from './UserForm';
 import { saveUserName } from './hooks';

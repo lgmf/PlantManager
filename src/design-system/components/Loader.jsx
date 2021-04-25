@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 import LottieView from 'lottie-react-native';
 
-import loadAnimation from '../../images/load.json';
+import loadAnimation from '@images/load.json';
 
 const LoaderContainer = styled.View`
   flex: 1;

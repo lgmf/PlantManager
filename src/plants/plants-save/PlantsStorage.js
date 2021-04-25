@@ -1,7 +1,7 @@
 import * as Notifications from 'expo-notifications';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { DateUtils } from '../../utils';
+import { DateUtils } from '@utils';
 
 const SAVED_PLANTS_STORAGE_KEY = '@plantManger.savedPlants';
 

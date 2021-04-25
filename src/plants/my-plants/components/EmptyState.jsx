@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components/native';
 import { useNavigation } from '@react-navigation/core';
 
-import { Button } from '../../../design-system/components';
-import { Paragraph } from '../../../design-system/typography';
-import { Colors } from '../../../design-system/palette';
+import { Button } from '@design-system/components';
+import { Paragraph } from '@design-system/typography';
+import { Colors } from '@design-system/palette';
 
 const EmptyStateContainer = styled.View`
   flex: 1;

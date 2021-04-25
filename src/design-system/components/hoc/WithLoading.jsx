@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import { Colors } from '../../palette';
+import { Colors } from '@design-system/palette';
 
 const ActivityIndicator = styled.ActivityIndicator`
   margin: 0 auto;

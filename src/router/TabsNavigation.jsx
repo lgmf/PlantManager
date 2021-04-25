@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { MaterialIcons } from '@expo/vector-icons';
-import { Colors } from '../design-system/palette';
+import { Colors } from '@design-system/palette';
 
 import PlantSelectScreen from '../plants/plants-select/PlantSelect';
 import MyPlantsScreen from '../plants/my-plants/MyPlants';
@@ -28,13 +28,15 @@ function TabsNavigation() {
         component={PlantSelectScreen}
         options={{
           title: 'Nova Planta',
-          tabBarIcon: (({ size, color }) => (
-            <MaterialIcons
-              name="add-circle-outline"
-              size={size}
-              color={color}
-            />
-          )),
+          tabBarIcon({ size, color }) {
+            return (
+              <MaterialIcons
+                name="add-circle-outline"
+                size={size}
+                color={color}
+              />
+            );
+          },
         }}
       />
 
@@ -43,13 +45,15 @@ function TabsNavigation() {
         component={MyPlantsScreen}
         options={{
           title: 'Minhas Plantas',
-          tabBarIcon: (({ size, color }) => (
-            <MaterialIcons
-              name="format-list-bulleted"
-              size={size}
-              color={color}
-            />
-          )),
+          tabBarIcon({ size, color }) {
+            return (
+              <MaterialIcons
+                name="format-list-bulleted"
+                size={size}
+                color={color}
+              />
+            );
+          },
         }}
       />
     </TabNavigator.Navigator>

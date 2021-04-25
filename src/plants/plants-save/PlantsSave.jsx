@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 
 import { useNavigation, useRoute } from '@react-navigation/core';
 
-import { Container } from '../../design-system/components';
+import { Container } from '@design-system/components';
 
 import { PlantInfo, PlantsNotificationForm, PlantTip } from './components';
 

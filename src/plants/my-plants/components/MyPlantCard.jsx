@@ -5,8 +5,8 @@ import Swipeable from 'react-native-gesture-handler/Swipeable';
 import styled from 'styled-components/native';
 import { Feather } from '@expo/vector-icons';
 
-import { Paragraph } from '../../../design-system/typography';
-import { Colors } from '../../../design-system/palette';
+import { Paragraph } from '@design-system/typography';
+import { Colors } from '@design-system/palette';
 
 import { PlantIcon } from '../../plants-select/components';
 

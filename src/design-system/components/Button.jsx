@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import { Colors } from '../palette';
-import { Fonts } from '../typography';
+import { Colors } from '@design-system/palette';
+import { Fonts } from '@design-system/typography';
 
 export const ButtonContainer = styled.TouchableOpacity`
   background-color: ${Colors.green};

@@ -3,7 +3,7 @@ import * as yup from 'yup';
 
 import { Formik } from 'formik';
 
-import { Button, Form, TextInput } from '../design-system/components';
+import { Button, Form, TextInput } from '@design-system/components';
 
 const UserFormSchema = yup.object().shape({
   name: yup.string().required('campo obrigatório'),

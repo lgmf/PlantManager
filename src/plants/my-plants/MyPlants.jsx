@@ -2,8 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components/native';
 import { useFocusEffect } from '@react-navigation/native';
 
-import { Header } from '../../design-system/layout';
-import { Container } from '../../design-system/components';
+import { Header } from '@design-system/layout';
+import { Container } from '@design-system/components';
 
 import { PlantTip } from '../plants-save/components';
 import PlantsStorage from '../plants-save/PlantsStorage';

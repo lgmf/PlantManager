@@ -3,8 +3,8 @@ import styled from 'styled-components/native';
 
 import { useNavigation, useRoute } from '@react-navigation/core';
 
-import { Title, Subtitle } from '../design-system/typography';
-import { Button, Container, Emoji } from '../design-system/components';
+import { Title, Subtitle } from '@design-system/typography';
+import { Button, Container, Emoji } from '@design-system/components';
 
 const Content = styled.View`
   width: 100%;

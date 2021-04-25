@@ -3,9 +3,9 @@ import styled from 'styled-components/native';
 
 import { useNavigation } from '@react-navigation/core';
 
-import { Header } from '../../design-system/layout';
-import { Container, Loader } from '../../design-system/components';
-import { Paragraph } from '../../design-system/typography';
+import { Header } from '@design-system/layout';
+import { Container, Loader } from '@design-system/components';
+import { Paragraph } from '@design-system/typography';
 
 import { usePlants, usePlantsEnvironments } from './hooks';
 

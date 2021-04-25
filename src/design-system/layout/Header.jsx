@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import Avatar from '../../images/avatar.svg';
+import Avatar from '@images/avatar.svg';
 
+import { Title, Paragraph } from '@design-system/typography';
 import { useUserName } from '../../user-identification/hooks';
-
-import { Title, Paragraph } from '../typography';
 
 const HeaderContainer = styled.View`
   width: 100%;

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import waterDrop from '../../../images/waterdrop.png';
+import { Colors } from '@design-system/palette';
+import { Paragraph } from '@design-system/typography';
 
-import { Colors } from '../../../design-system/palette';
-import { Paragraph } from '../../../design-system/typography';
+import waterDrop from '@images/waterdrop.png';
 
 const PlantTipContainer = styled.View`
   width: 100%;
